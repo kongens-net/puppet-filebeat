@@ -14,7 +14,7 @@ define filebeat::prospector (
     owner        => 'root',
     group        => 'root',
     mode         => $::filebeat::config_file_mode,
-    content      => hash2yaml($config),
+    content      => hash2yaml($wrapped_config),
     validate_cmd => "/usr/share/filebeat/bin/filebeat -N -configtest -c %",
     notify       => Service['filebeat'],
   }

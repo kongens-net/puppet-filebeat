@@ -5,7 +5,7 @@ define filebeat::prospector (
 
   $wrapped_config = {
     'filebeat' => {
-      'prospectors' => $config
+      'prospectors' => [$config]
     }
   }
   file { "filebeat-${name}":

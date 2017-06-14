@@ -4,7 +4,7 @@ filebeat:
     - input_type: <%= @input_type %>
       paths:
         <%- @paths.each do |log_path| -%>
-        - <%= log_path %>
+        - '<%= log_path %>'
         <%- end -%>
       <%- if @encoding -%>
       encoding: <%= @encoding %>
@@ -24,7 +24,7 @@ filebeat:
       <%- if @exclude_files.length > 0 -%>
       exclude_files:
         <%- @exclude_files.each do |exclude_file| -%>
-        - <%= exclude_file %>
+        - '<%= exclude_file %>'
         <%- end -%>
       <%- end -%>
       <%- if @fields.length > 0 -%>
@@ -37,7 +37,7 @@ filebeat:
       <%- if @tags.length > 0 -%>
       tags:
         <%- @tags.each do |tag| -%>
-        - <%= tag %>
+        - '<%= tag %>'
         <%- end -%>
       <%- end -%>
       <%- if @ignore_older -%>
